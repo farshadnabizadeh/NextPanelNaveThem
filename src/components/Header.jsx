@@ -55,24 +55,24 @@ const Header = ({ onToggleSidebar, isSidebarOpen }) => {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
-              className="absolute right-0 mt-0 translate-x-20 w-48 bg-[#015F78] text-white rounded-lg shadow-xl z-50 border border-[#015F78]"
+              className="absolute right-0 mt-[16px] translate-x-20 w-48 bg-[#015F78] text-white rounded-lg shadow-xl z-50 border border-[#015F78]"
             >
-              <div className="py-1">
+              <div className="py-0">
                 <a
                   href="#"
-                  className="block px-4 py-2 hover:bg-amber-800 rounded-lg"
+                  className="block px-4 py-2 hover:bg-amber-800 hover:rounded-t-lg border-t-[1px]"
                 >
                   پروفایل
                 </a>
                 <a
                   href="#"
-                  className="block px-4 py-2 hover:bg-amber-800 rounded-lg"
+                  className="block px-4 py-2 hover:bg-amber-800 border-t-[1px]"
                 >
                   تنظیمات
                 </a>
                 <a
                   href="#"
-                  className="block px-4 py-2 hover:bg-amber-800 rounded-lg"
+                  className="block px-4 py-2 hover:bg-amber-800 rounded-b-lg border-t-[1px]"
                 >
                   خروج
                 </a>
