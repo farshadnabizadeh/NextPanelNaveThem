@@ -87,9 +87,9 @@ const Sidebar = ({ isOpen, onClose }) => {
           animate={{ x: 0 }}
           exit={{ x: "100%" }}
           transition={{ type: "spring", damping: 25, stiffness: 200 }}
-          className="fixed inset-y-0 right-0 z-40 w-64 bg-[#ae760d] text-white shadow-xl lg:static lg:inset-0 lg:w-64"
+          className="fixed inset-y-0 right-0 z-40 w-64 bg-[#015F78] text-white shadow-xl lg:static lg:inset-0 lg:w-64"
         >
-          <div className="p-4 border-b border-amber-700 flex items-center justify-between">
+          <div className="p-4 border-b border-[#015F78] flex items-center justify-between">
             <h1 className="text-xl font-bold bg-gradient-to-r from-amber-400 to-yellow-400 bg-clip-text text-transparent">
               پنل مدیریت
             </h1>

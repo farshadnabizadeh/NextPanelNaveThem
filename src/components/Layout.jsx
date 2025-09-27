@@ -43,7 +43,7 @@ const Layout = ({ children }) => {
         {/* Blur overlay for mobile/tablet when sidebar is open */}
         {isMobile && sidebarOpen && (
           <div 
-            className="fixed inset-0 bg-[rgba(0,0,0,0.4)] bg-opacity-50 z-30 lg:hidden"
+            className="fixed inset-0 bg-[rgba(0,0,0,0.1)] bg-opacity-50 z-30 lg:hidden"
             onClick={closeSidebar}
           />
         )}
