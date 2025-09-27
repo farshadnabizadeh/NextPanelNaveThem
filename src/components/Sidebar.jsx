@@ -10,6 +10,7 @@ import Orders from "./icons/Orders";
 import Settings from "./icons/Settings";
 import Analytics from "./icons/Analytics";
 import ChevronDown from "./icons/ChevronDown";
+import Menu from "./icons/Menu";
 
 const Sidebar = ({ isOpen, onClose }) => {
   const pathname = usePathname();
@@ -78,9 +79,17 @@ const Sidebar = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    <aside className="fixed inset-y-0 right-0 z-40 w-64 bg-[#525252] text-white shadow-lg lg:static lg:inset-0 lg:w-64">
-      <div className="p-4 border-b border-gray-600">
-        <h1 className="text-xl font-bold">پنل مدیریت</h1>
+    <aside className="fixed inset-y-0 right-0 z-40 w-64 bg-[#0F172B] text-white shadow-2xl border-l border-slate-700/50 lg:static lg:inset-0 lg:w-64">
+      <div className="p-4 border-b border-slate-700/50 flex items-center justify-between">
+        <h1 className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+          پنل مدیریت
+        </h1>
+        <button
+          onClick={onClose}
+          className="lg:hidden p-2 hover:bg-slate-700/50 rounded-lg transition-colors"
+        >
+          <Menu size={20} />
+        </button>
       </div>
 
       <nav className="mt-4">
@@ -91,8 +100,8 @@ const Sidebar = ({ isOpen, onClose }) => {
                 <div>
                   <button
                     onClick={() => toggleDropdown(item.key)}
-                    className={`w-full flex items-center justify-between px-4 py-3 text-right hover:bg-gray-600 rounded-lg transition-colors ${
-                      openDropdowns[item.key] ? "bg-gray-600" : ""
+                    className={`w-full flex items-center justify-between px-4 py-3 text-right hover:bg-slate-700/50 rounded-lg transition-colors ${
+                      openDropdowns[item.key] ? "bg-slate-700/50" : ""
                     }`}
                   >
                     <div className="flex items-center space-x-3 space-x-reverse">
@@ -113,8 +122,10 @@ const Sidebar = ({ isOpen, onClose }) => {
                         <li key={index}>
                           <Link
                             href={subItem.href}
-                            className={`block px-4 py-2 text-sm hover:bg-gray-600 rounded-lg transition-colors ${
-                              subItem.active ? "bg-gray-600" : ""
+                            className={`block px-4 py-2 text-sm hover:bg-slate-700/50 rounded-lg transition-colors ${
+                              subItem.active
+                                ? "bg-slate-700/50 text-blue-400"
+                                : "text-slate-300"
                             }`}
                           >
                             {subItem.label}
@@ -127,8 +138,10 @@ const Sidebar = ({ isOpen, onClose }) => {
               ) : (
                 <Link
                   href={item.href}
-                  className={`flex items-center space-x-3 space-x-reverse px-4 py-3 text-right hover:bg-gray-600 rounded-lg transition-colors ${
-                    item.active ? "bg-gray-600" : ""
+                  className={`flex items-center space-x-3 space-x-reverse px-4 py-3 text-right hover:bg-slate-700/50 rounded-lg transition-colors ${
+                    item.active
+                      ? "bg-slate-700/50 text-blue-400"
+                      : "text-slate-300"
                   }`}
                 >
                   {item.icon && <item.icon size={20} />}

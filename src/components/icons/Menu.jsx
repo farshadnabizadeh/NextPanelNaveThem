@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-const Menu = ({ size = 24, color = "currentColor" }) => (
+const Menu = ({ size = 24, color = 'currentColor' }) => (
   <svg
     width={size}
     height={size}

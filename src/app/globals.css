@@ -1,17 +1,30 @@
 @import "tailwindcss";
 
+
+
 @layer base {
   html {
     direction: rtl;
   }
-
+  
   body {
-    font-family: "Vazir", sans-serif;
+    font-family: 'Vazir', sans-serif;
+    overflow: hidden; /* Remove scrollbars */
   }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+  
+  /* Remove scrollbars */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 }
