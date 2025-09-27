@@ -42,7 +42,7 @@ const Header = ({ onToggleSidebar, isSidebarOpen }) => {
           <motion.button
             whileHover={{ scale: 1.02 }}
             onClick={() => setIsProfileOpen(!isProfileOpen)}
-            className="flex items-center space-x-2 space-x-reverse bg-amber-700 hover:bg-amber-600 px-4 py-2 rounded-lg transition-colors"
+            className="flex items-center space-x-2 space-x-reverse px-4 py-2 rounded-lg transition-colors"
           >
             <span className="w-8 h-8 bg-gradient-to-r from-amber-500 to-yellow-600 rounded-full flex items-center justify-center">
               <span className="font-semibold">ک</span>
