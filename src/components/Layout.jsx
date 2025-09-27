@@ -34,7 +34,7 @@ const Layout = ({ children }) => {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-white" dir="rtl">
+    <div className="flex flex-col overflow-x-hidden min-h-screen bg-white" dir="rtl">
       <Header onToggleSidebar={toggleSidebar} isSidebarOpen={sidebarOpen} />
       
       <div className="flex flex-1 overflow-hidden">
