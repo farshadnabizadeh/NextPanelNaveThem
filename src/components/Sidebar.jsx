@@ -89,17 +89,28 @@ const Sidebar = ({ isOpen, onClose }) => {
           transition={{ type: "spring", damping: 25, stiffness: 200 }}
           className="fixed inset-y-0 right-0 z-40 w-64 bg-[#ae760d] text-white shadow-xl lg:static lg:inset-0 lg:w-64"
         >
-          <nav className="w-full">
+          <div className="p-4 border-b border-amber-700 flex items-center justify-between">
+            <h1 className="text-xl font-bold bg-gradient-to-r from-amber-400 to-yellow-400 bg-clip-text text-transparent">
+              پنل مدیریت
+            </h1>
+            <button
+              onClick={onClose}
+              className="lg:hidden p-2 hover:bg-amber-700 transition-colors"
+            >
+              <Menu size={20} />
+            </button>
+          </div>
+
+          <nav className="w-full mt-4">
             <ul className="space-y-2">
               {menuItems.map((item) => (
                 <li key={item.key}>
                   {item.dropdown ? (
                     <div>
                       <motion.button
-                        whileHover={{ scale: 1.02 }}
                         onClick={() => toggleDropdown(item.key)}
-                        className={`w-full flex items-center justify-between px-4 py-3 text-right hover:bg-teal-700 rounded-lg transition-colors ${
-                          openDropdowns[item.key] ? "bg-teal-700" : ""
+                        className={`w-full flex items-center justify-between px-4 py-3 text-right hover:bg-amber-700 transition-colors ${
+                          openDropdowns[item.key] ? "bg-amber-700" : ""
                         }`}
                       >
                         <div className="flex items-center space-x-3 space-x-reverse">
@@ -134,10 +145,10 @@ const Sidebar = ({ isOpen, onClose }) => {
                               >
                                 <Link
                                   href={subItem.href}
-                                  className={`block px-4 py-2 text-sm hover:bg-teal-700 rounded-lg transition-colors ${
+                                  className={`block px-4 py-2 text-sm hover:bg-amber-700 transition-colors ${
                                     subItem.active
-                                      ? "bg-teal-700 text-cyan-400"
-                                      : "text-teal-200"
+                                      ? "bg-amber-700 text-amber-400"
+                                      : "text-amber-200"
                                   }`}
                                 >
                                   {subItem.label}
@@ -149,19 +160,19 @@ const Sidebar = ({ isOpen, onClose }) => {
                       </AnimatePresence>
                     </div>
                   ) : (
-                    <motion.div whileHover={{ scale: 1.02 }}>
+                    <div>
                       <Link
                         href={item.href}
-                        className={`flex items-center space-x-3 space-x-reverse px-4 py-3 text-right hover:bg-teal-700 rounded-lg transition-colors ${
+                        className={`flex items-center space-x-3 space-x-reverse px-4 py-3 text-right hover:bg-amber-700 transition-colors ${
                           item.active
-                            ? "bg-teal-700 text-cyan-400"
-                            : "text-teal-200"
+                            ? "bg-amber-700 text-amber-400"
+                            : "text-amber-200"
                         }`}
                       >
                         {item.icon && <item.icon size={20} />}
                         <span>{item.label}</span>
                       </Link>
-                    </motion.div>
+                    </div>
                   )}
                 </li>
               ))}
