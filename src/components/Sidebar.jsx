@@ -87,23 +87,9 @@ const Sidebar = ({ isOpen, onClose }) => {
           animate={{ x: 0 }}
           exit={{ x: "100%" }}
           transition={{ type: "spring", damping: 25, stiffness: 200 }}
-          className="fixed inset-y-0 right-0 z-40 w-64 bg-[#008080] text-white shadow-xl border-l border-teal-700 lg:static lg:inset-0 lg:w-64"
+          className="fixed inset-y-0 right-0 z-40 w-64 bg-[#ae760d] text-white shadow-xl lg:static lg:inset-0 lg:w-64"
         >
-          <div className="p-4 border-b border-teal-700 flex items-center justify-between">
-            <h1 className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-teal-400 bg-clip-text text-transparent">
-              پنل مدیریت
-            </h1>
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={onClose}
-              className="lg:hidden p-2 hover:bg-teal-700 rounded-lg transition-colors"
-            >
-              <Menu size={20} />
-            </motion.button>
-          </div>
-
-          <nav className="mt-4">
+          <nav className="w-full">
             <ul className="space-y-2">
               {menuItems.map((item) => (
                 <li key={item.key}>

@@ -12,7 +12,7 @@ const Header = ({ onToggleSidebar, isSidebarOpen }) => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className="bg-[#008080] text-white p-4 shadow-lg border-b border-teal-700"
+      className="bg-[#ae760d] text-white p-4 shadow-lg border-b"
     >
       <div className="flex items-center justify-between">
         <motion.button
