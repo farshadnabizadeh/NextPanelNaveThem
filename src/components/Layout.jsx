@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import React, { useState, useEffect } from "react";
-import Header from "./Header";
-import Sidebar from "./Sidebar";
-import { Home, Dashboard, Products, Orders, Settings } from "../labels";
-import { motion } from "framer-motion";
+import React, { useState, useEffect } from 'react';
+import Header from './Header';
+import Sidebar from './Sidebar';
+import { Home, Dashboard, Products, Orders, Settings } from '../labels';
+import { motion } from 'framer-motion';
 
 const Layout = ({ children }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -18,10 +18,10 @@ const Layout = ({ children }) => {
     };
 
     checkScreenSize();
-    window.addEventListener("resize", checkScreenSize);
+    window.addEventListener('resize', checkScreenSize);
 
     return () => {
-      window.removeEventListener("resize", checkScreenSize);
+      window.removeEventListener('resize', checkScreenSize);
     };
   }, []);
 
@@ -36,15 +36,25 @@ const Layout = ({ children }) => {
   return (
     <div className="flex flex-col min-h-screen bg-white" dir="rtl">
       <Header onToggleSidebar={toggleSidebar} isSidebarOpen={sidebarOpen} />
-
+      
       <div className="flex flex-1 overflow-hidden">
         <Sidebar isOpen={sidebarOpen} onClose={closeSidebar} />
-
-        <motion.main
+        
+        {/* Blur overlay for mobile/tablet when sidebar is open */}
+        {isMobile && sidebarOpen && (
+          <div 
+            className="fixed inset-0 bg-[rgba(0,0,0,0.4)] bg-opacity-50 z-30 lg:hidden"
+            onClick={closeSidebar}
+          />
+        )}
+        
+        <motion.main 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="flex-1 bg-white p-4 lg:p-6 min-h-screen overflow-hidden"
+          className={`flex-1 bg-white p-4 lg:p-6 min-h-screen overflow-hidden ${
+            isMobile && sidebarOpen ? 'blur-sm' : ''
+          }`}
         >
           <div className="max-w-7xl mx-auto h-full overflow-hidden">
             {children}
