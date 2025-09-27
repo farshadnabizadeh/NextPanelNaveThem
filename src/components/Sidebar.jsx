@@ -102,14 +102,14 @@ const Sidebar = ({ isOpen, onClose }) => {
           </div>
 
           <nav className="w-full mt-4">
-            <ul className="space-y-2">
+            <ul className="space-y-0">
               {menuItems.map((item) => (
                 <li key={item.key}>
                   {item.dropdown ? (
                     <div>
                       <motion.button
                         onClick={() => toggleDropdown(item.key)}
-                        className={`w-full flex items-center justify-between px-4 py-3 text-right hover:bg-amber-700 transition-colors ${
+                        className={`w-full flex border-t-[1px] items-center justify-between px-4 py-3 text-right hover:bg-amber-700 transition-colors ${
                           openDropdowns[item.key] ? "bg-amber-700" : ""
                         }`}
                       >
@@ -145,10 +145,10 @@ const Sidebar = ({ isOpen, onClose }) => {
                               >
                                 <Link
                                   href={subItem.href}
-                                  className={`block px-4 py-2 text-sm hover:bg-amber-700 transition-colors ${
+                                  className={`block px-4 py-2 text-sm hover: transition-colors ${
                                     subItem.active
                                       ? "bg-amber-700 text-white"
-                                      : "text-amber-200"
+                                      : "text-white"
                                   }`}
                                 >
                                   {subItem.label}
@@ -163,10 +163,8 @@ const Sidebar = ({ isOpen, onClose }) => {
                     <div>
                       <Link
                         href={item.href}
-                        className={`flex items-center space-x-3 space-x-reverse px-4 py-3 text-right hover:bg-amber-700 transition-colors ${
-                          item.active
-                            ? "bg-amber-700 text-white"
-                            : "text-white"
+                        className={`flex border-t-[1px] items-center space-x-3 space-x-reverse px-4 py-3 text-right hover:bg-amber-700 transition-colors ${
+                          item.active ? "bg-amber-700 text-white" : "text-white"
                         }`}
                       >
                         {item.icon && <item.icon size={20} />}
