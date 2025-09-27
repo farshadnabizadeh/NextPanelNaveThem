@@ -90,7 +90,7 @@ const Sidebar = ({ isOpen, onClose }) => {
           className="fixed inset-y-0 right-0 z-40 w-64 bg-[#015F78] text-white shadow-xl lg:static lg:inset-0 lg:w-64"
         >
           <div className="p-4 border-b border-[#015F78] flex items-center justify-between">
-            <h1 className="text-xl font-bold bg-gradient-to-r from-amber-400 to-yellow-400 bg-clip-text text-transparent">
+            <h1 className="text-xl font-bold text-white bg-clip-text">
               پنل مدیریت
             </h1>
             <button
@@ -115,7 +115,7 @@ const Sidebar = ({ isOpen, onClose }) => {
                       >
                         <div className="flex items-center space-x-3 space-x-reverse">
                           {item.icon && <item.icon size={20} />}
-                          <span>{item.label}</span>
+                          <span className="mx-3">{item.label}</span>
                         </div>
                         <motion.div
                           animate={{
@@ -147,7 +147,7 @@ const Sidebar = ({ isOpen, onClose }) => {
                                   href={subItem.href}
                                   className={`block px-4 py-2 text-sm hover:bg-amber-700 transition-colors ${
                                     subItem.active
-                                      ? "bg-amber-700 text-amber-400"
+                                      ? "bg-amber-700 text-white"
                                       : "text-amber-200"
                                   }`}
                                 >
@@ -165,12 +165,12 @@ const Sidebar = ({ isOpen, onClose }) => {
                         href={item.href}
                         className={`flex items-center space-x-3 space-x-reverse px-4 py-3 text-right hover:bg-amber-700 transition-colors ${
                           item.active
-                            ? "bg-amber-700 text-amber-400"
-                            : "text-amber-200"
+                            ? "bg-amber-700 text-white"
+                            : "text-white"
                         }`}
                       >
                         {item.icon && <item.icon size={20} />}
-                        <span>{item.label}</span>
+                        <span className="mx-3">{item.label}</span>
                       </Link>
                     </div>
                   )}
